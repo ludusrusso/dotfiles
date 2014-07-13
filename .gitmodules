@@ -4,3 +4,9 @@
 [submodule "vim/bundle/delmitmate"]
 	path = vim/bundle/delmitmate
 	url = git://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/arduino"]
+	path = vim/bundle/arduino
+	url = https://github.com/tclem/vim-arduino.git
+[submodule "vim/bundle/arduino-syntax"]
+	path = vim/bundle/arduino-syntax
+	url = https://github.com/sudar/vim-arduino-syntax.git
