@@ -37,7 +37,7 @@ set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
 " set dark background and color scheme
 set background=dark
-colorscheme base16-railscasts
+" colorscheme base16-railscasts
 
 " set up some custom colors
 highlight clear SignColumn
