@@ -1,0 +1,9 @@
+[submodule "vim/bundle/comments"]
+	path = vim/bundle/comments
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "vim/bundle/delmitmate"]
+	path = vim/bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
