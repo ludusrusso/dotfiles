@@ -1,0 +1,1 @@
+echo "Bash di Ludovico"
