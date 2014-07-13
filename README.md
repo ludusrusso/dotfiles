@@ -9,6 +9,6 @@ My dotfiles configuration on MAC OS X
 ```bash
 $ cd ~
 $ git clone git@github.com:ludusrusso/dotfiles.git .
-$ sh detfiles/install.sh
+$ sh dotfiles/install.sh
 ```
 
