@@ -3,3 +3,5 @@
 	email = ludus.russo@gmail.com
 [push]
 	default = matching
+[core]
+	excludesfile = /Users/ludus/.gitignore_global
