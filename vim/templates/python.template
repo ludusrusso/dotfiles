@@ -1,0 +1,25 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+#===============================================================================
+#
+#         FILE: test.py
+#
+#        USAGE: ./test.py  
+#
+#  DESCRIPTION: 
+#
+#      OPTIONS: ---
+# REQUIREMENTS: ---
+#         BUGS: ---
+#        NOTES: ---
+#       AUTHOR: Ludovico Russo
+# ORGANIZATION: 
+#      VERSION: 1.0
+#      CREATED: 09/12/2012 13:38:51
+#     REVISION: ---
+#===============================================================================
+
+
+def main():
+    ""docstring for main""
+    pass"
