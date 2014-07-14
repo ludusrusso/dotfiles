@@ -7,8 +7,7 @@ My dotfiles configuration on MAC OS X
 ## Installation
 
 ```bash
-$ cd ~
-$ git clone git@github.com:ludusrusso/dotfiles.git .
-$ sh dotfiles/install.sh
+$ git clone git@github.com:ludusrusso/dotfiles.git ~/dotfiles
+$ sh ~/dotfiles/install.sh
 ```
 
