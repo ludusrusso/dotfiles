@@ -8,8 +8,8 @@ call pathogen#helptags()
 syntax on                         " show syntax highlighting
 filetype plugin indent on
 set autoindent                    " set auto indent
-set ts=4                          " set indent to 2 spaces
-set shiftwidth=4
+set ts=2                          " set indent to 2 spaces
+set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
 set relativenumber                " show relative line numbers
@@ -33,11 +33,12 @@ set wildmode=list:longest,full
 runtime macros/matchit.vim        " use % to jump between start/end of methods
 
 " put git status, column/row number, total lines, and percentage in status
-" set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
 " set dark background and color scheme
+let base16colorspace=256  " Access colors present in 256 colorspace"
 set background=dark
-" colorscheme base16-railscasts
+colorscheme base16-railscasts
 
 " set up some custom colors
 highlight clear SignColumn
@@ -68,8 +69,6 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufNewFile *.py 0r ~/.vim/templates/python.template
-
 
 " set leader key to comma
 let mapleader = ","
@@ -125,103 +124,4 @@ if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
-" execute current file
-map <leader>e :call ExecuteFile(expand("%"))<cr>
 
-" execute file if we know how
-function! ExecuteFile(filename)
-  :w
-  :silent !clear
-  if match(a:filename, '\.rb$') != -1
-    exec ":!ruby " . a:filename
-  elseif match(a:filename, '\.js$') != -1
-    exec ":!node " . a:filename
-  elseif match(a:filename, '\.sh$') != -1
-    exec ":!bash " . a:filename
-  else
-    exec ":!echo \"Don't know how to execute: \"" . a:filename
-  end
-endfunction
-
-" jump to last position in file
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
-
-" multi-purpose tab key (auto-complete)
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
-
-" rename current file, via Gary Bernhardt
-function! RenameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'))
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-map <leader>n :call RenameFile()<cr>
-
-function! RunTests(filename)
-  " Write the file and run tests for the given filename
-  :w
-  :silent !clear
-  if match(a:filename, '\.feature$') != -1
-    exec ":!bundle exec cucumber " . a:filename
-  elseif match(a:filename, '_test\.rb$') != -1
-    if filereadable("bin/testrb")
-      exec ":!bin/testrb " . a:filename
-    else
-      exec ":!ruby -Itest " . a:filename
-    end
-  else
-    if filereadable("Gemfile")
-      exec ":!bundle exec rspec --color " . a:filename
-    else
-      exec ":!rspec --color " . a:filename
-    end
-  end
-endfunction
-
-function! SetTestFile()
-  " set the spec file that tests will be run for.
-  let t:grb_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-  if a:0
-    let command_suffix = a:1
-  else
-    let command_suffix = ""
-  endif
-
-  " run the tests for the previously-marked file.
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFile()
-  elseif !exists("t:grb_test_file")
-    return
-    q1
-  end
-  call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-  let spec_line_number = line('.')
-  call RunTestFile(":" . spec_line_number . " -b")
-endfunction
-
-" run test runner
-map <leader>t :call RunTestFile()<cr>
-map <leader>T :call RunNearestTest()<cr>
