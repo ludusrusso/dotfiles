@@ -1,7 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/ludus/.vim'
-let g:netrw_dirhist_2='/Users/ludus/.vim/autoload'
-let g:netrw_dirhist_3='/Users/ludus/dotfiles/vim/autoload'
-let g:netrw_dirhist_4='/Users/ludus/dotfiles/vim/bundle/snipmate/snippets'
-let g:netrw_dirhist_5='/Users/ludus/develop'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/ludus/dotfiles/vim'
