@@ -9,3 +9,5 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 
+source ~/ros_catkin_ws/install_isolated/setup.bash
+source ~/ros_ws/devel/setup.bash
