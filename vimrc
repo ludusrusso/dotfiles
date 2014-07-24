@@ -124,4 +124,25 @@ if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
-let g:ycm_collect_identifiers_from_tags_files = 1
+
+" configure tags - add additional tags here or comment out not-used ones
+ set tags+=~/.vim/tags/tags
+ set tags+=~/.vim/tags/gltags
+ "set tags+=~/.vim/tags/sdl
+ set tags+=~/.vim/tags/qt4tags
+ " OmniCppComplete
+ let OmniCpp_NamespaceSearch = 1
+ let OmniCpp_GlobalScopeSearch = 1
+ let OmniCpp_ShowAccess = 1
+ let OmniCpp_MayCompleteDot = 1
+ let OmniCpp_MayCompleteArrow = 1
+ let OmniCpp_MayCompleteScope = 1
+ "let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+
+ " automatically open and close the popup menu / preview window
+ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+ set completeopt=menuone,menu,preview ",longest 
+ "END Omnicompletion
+
+
+" let g:ycm_collect_identifiers_from_tags_files = 1
