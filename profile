@@ -11,3 +11,12 @@ fi
 
 source ~/ros_catkin_ws/install_isolated/setup.bash
 source ~/ros_ws/devel/setup.bash
+source ~/hydro_ws/devel/setup.bash
+
+export DYLD_FORCE_FLAT_NAMESPACE=1  # for YouCompleteMe
+
+
+
+
+# for ROS configuration polimi
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/ludus/develop/polimi/flirtlib/ins/lib/flirtlib:/Users/ludus/develop/polimi/bespin/build/lib
