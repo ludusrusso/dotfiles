@@ -43,7 +43,7 @@ set background=dark
 " set up some custom colors
 highlight clear SignColumn
 highlight VertSplit    ctermbg=236
-highlight ColorColumn  ctermbg=237
+highlight ColorColumn  ctermbg=46
 highlight LineNr       ctermbg=236 ctermfg=240
 highlight CursorLineNr ctermbg=236 ctermfg=240
 highlight CursorLine   ctermbg=236
@@ -81,6 +81,11 @@ let g:ctrlp_match_window_reversed = 0
 
 " use silver searcher for ctrlp
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+
+" licensing
+map :parloma :0r ~/.vim/licenses/parloma.txt
+
 
 " unmap F1 help
 nmap <F1> :echo<CR>
@@ -149,3 +154,4 @@ endif
 
 
 set clipboard=unnamed
+map <leader>a :A<CR>
