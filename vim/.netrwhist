@@ -1,10 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/ludus/hydro_ws/src/polimi/roamfree_2dslam'
-let g:netrw_dirhist_2='/Users/ludus/dotfiles/vim/bundle/YouCompleteMe'
-let g:netrw_dirhist_3='/Users/ludus/.vim'
-let g:netrw_dirhist_4='/Users/ludus/develop/parloma/robotcontrol/ros/hand_app'
-let g:netrw_dirhist_5='/Users/ludus/develop/parloma/robotcontrol/ros/hand_app/src'
-let g:netrw_dirhist_6='/Users/ludus/develop/parloma/robotcontrol/ros/hand_app'
-let g:netrw_dirhist_7='/Users/ludus/hydro_ws/src/polimi/laser_scan_matcher/launch'
-let g:netrw_dirhist_8='/Users/ludus/dotfiles/vim/bundle/a.vim'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction'
+let g:netrw_dirhist_2='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction/include'
+let g:netrw_dirhist_3='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction/include/hand_interaction'
+let g:netrw_dirhist_4='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction/include'
+let g:netrw_dirhist_5='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction/include/hand_interaction'
+let g:netrw_dirhist_6='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction'
