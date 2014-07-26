@@ -10,8 +10,11 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plain 'Valloric/YouCompleteMe'
-
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/a.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'wincent/Command-T'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -148,16 +151,15 @@ endif
 
 " configure tags - add additional tags here or comment out not-used ones
  set tags+=~/.vim/tags/tags
- set tags+=~/.vim/tags/gltags
+ set tags+=~/.vim/tags/tags.ros
  "set tags+=~/.vim/tags/sdl
- set tags+=~/.vim/tags/qt4tags
  " OmniCppComplete
- let OmniCpp_NamespaceSearch = 1
- let OmniCpp_GlobalScopeSearch = 1
- let OmniCpp_ShowAccess = 1
- let OmniCpp_MayCompleteDot = 1
- let OmniCpp_MayCompleteArrow = 1
- let OmniCpp_MayCompleteScope = 1
+ " let OmniCpp_NamespaceSearch = 1
+ " let OmniCpp_GlobalScopeSearch = 1
+ " let OmniCpp_ShowAccess = 1
+ " let OmniCpp_MayCompleteDot = 1
+ " let OmniCpp_MayCompleteArrow = 1
+ " let OmniCpp_MayCompleteScope = 1
  "let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
  " automatically open and close the popup menu / preview window
@@ -166,8 +168,8 @@ endif
  "END Omnicompletion
 
 
-" let g:ycm_collect_identifiers_from_tags_files = 1
-
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
 set clipboard=unnamed
 map <leader>a :A<CR>
