@@ -1,9 +1,25 @@
 " .vimrc
-set encoding=utf-8
 
-" load up pathogen and all bundles
-call pathogen#infect()
-call pathogen#helptags()
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plain 'Valloric/YouCompleteMe'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+
+
+
+set encoding=utf-8
 
 syntax on                         " show syntax highlighting
 filetype plugin indent on

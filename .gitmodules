@@ -1,36 +1,3 @@
-[submodule "vim/bundle/comments"]
-	path = vim/bundle/comments
-	url = git://github.com/tpope/vim-commentary.git
-[submodule "vim/bundle/delmitmate"]
-	path = vim/bundle/delmitmate
-	url = git://github.com/Raimondi/delimitMate.git
-[submodule "vim/bundle/arduino"]
-	path = vim/bundle/arduino
-	url = https://github.com/tclem/vim-arduino.git
-[submodule "vim/bundle/arduino-syntax"]
-	path = vim/bundle/arduino-syntax
-	url = https://github.com/sudar/vim-arduino-syntax.git
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/color-schemes"]
-	path = vim/bundle/color-schemes
-	url = git@github.com:chrishunt/color-schemes.git
-[submodule "vim/bundle/base16-vim"]
-	path = vim/bundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
-[submodule "vim/bundle/vim-ros"]
-	path = vim/bundle/vim-ros
-	url = https://github.com/taketwo/vim-ros
-[submodule "vim/bundle/a.vim"]
-	path = vim/bundle/a.vim
-	url = https://github.com/vim-scripts/a.vim.git
-[submodule "vim/bundle/snipmate.vim"]
-	path = vim/bundle/snipmate.vim
-	url = https://github.com/msanders/snipmate.vim
+[submodule "vim/bundle/vundle"]
+	path = vim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
