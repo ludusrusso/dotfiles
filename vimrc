@@ -17,11 +17,15 @@ Plugin 'wincent/Command-T'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
-
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'derekwyatt/vim-protodef'
 Plugin 'derekwyatt/vim-fswitch'
+Plugin 'Valloric/ListToggle'
+Plugin 'scrooloose/syntastic'
+
+Plugin 'sven-strothoff/vim-clang_doxygen'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -104,9 +108,9 @@ vnoremap <leader>h :s/:\(\w*\) *=>/\1:/g<cr>
 map <leader>m :!open -a Marked %<cr><cr>
 
 " map git commands
-map <leader>b :Gblame<cr>
-map <leader>l :!clear && git log -p %<cr>
-map <leader>d :!clear && git diff %<cr>
+" map <leader>b :Gblame<cr>
+" map <leader>l :!clear && git log -p %<cr>
+" map <leader>d :!clear && git diff %<cr>
 
 " open gist after it's been created
 let g:gist_open_browser_after_post = 1
@@ -184,3 +188,34 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 let g:protodefctagsexe = '/usr/local/bin/ctags'
 let g:protodefprotogetter = '~/.vim/bundle/vim-protodef/pullproto.pl'
+
+
+" YouCompleteMe
+"
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+
+
+
+
+
+
+" ROS
+au BufRead,BufNewFile *.urdf              setfiletype xml
+au BufRead,BufNewFile *.launch            setfiletype xml
+au BufRead,BufNewFile *.world             setfiletype xml
+au BufRead,BufNewFile *.launch            UltiSnipsAddFiletypes roslaunch.xml
+au BufRead,BufNewFile cfg/*.cfg           UltiSnipsAddFiletypes roscfg.python
+au BufRead,BufNewFile manifest.xml        UltiSnipsAddFiletypes rosmanifest.xml
+au BufRead,BufNewFile */stacks/*.{cpp,h}  UltiSnipsAddFiletypes roscpp.cpp
+au BufRead,BufNewFile */*_ws/*.{cpp,h}    UltiSnipsAddFiletypes roscpp.cpp
+au BufRead,BufNewFile */stacks/*.py       UltiSnipsAddFiletypes rospy.python
+au BufRead,BufNewFile */*_ws/*.py         UltiSnipsAddFiletypes rospy.python
+
+
+" Doxygen plugin
+
+let g:clang_doxygen_libclang_library_path = '/Library/Developer/CommandLineTools/usr/lib'
+
+
