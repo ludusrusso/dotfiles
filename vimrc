@@ -1,7 +1,7 @@
 " .vimrc
 
 
-set nocompatible              " be iMproved, required
+" set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -12,15 +12,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/a.vim'
-Plugin 'msanders/snipmate.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'wincent/Command-T'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'derekwyatt/vim-protodef'
+Plugin 'derekwyatt/vim-fswitch'
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-
-
-
 
 set encoding=utf-8
 
@@ -52,28 +55,14 @@ set wildmode=list:longest,full
 runtime macros/matchit.vim        " use % to jump between start/end of methods
 
 " put git status, column/row number, total lines, and percentage in status
-" set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
 " set dark background and color scheme
 let base16colorspace=256  " Access colors present in 256 colorspace"
+let g:solarized_contrast="high"
+let g:solarized_visilibity="low"
 set background=dark
-" colorscheme base16-railscasts
-
-" set up some custom colors
-highlight clear SignColumn
-highlight VertSplit    ctermbg=236
-highlight ColorColumn  ctermbg=46
-highlight LineNr       ctermbg=236 ctermfg=240
-highlight CursorLineNr ctermbg=236 ctermfg=240
-highlight CursorLine   ctermbg=236
-highlight StatusLineNC ctermbg=238 ctermfg=0
-highlight StatusLine   ctermbg=240 ctermfg=12
-highlight IncSearch    ctermbg=3   ctermfg=1
-highlight Search       ctermbg=1   ctermfg=3
-" highlight Visual       ctermbg=3   ctermfg=0
-highlight Pmenu        ctermbg=240 ctermfg=12
-highlight PmenuSel     ctermbg=3   ctermfg=1
-highlight SpellBad     ctermbg=0   ctermfg=1
+colorscheme solarized
 
 " highlight the status bar when in insert mode
 if version >= 700
@@ -100,11 +89,6 @@ let g:ctrlp_match_window_reversed = 0
 
 " use silver searcher for ctrlp
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-
-" licensing
-map :parloma :0r ~/.vim/licenses/parloma.txt
-
 
 " unmap F1 help
 nmap <F1> :echo<CR>
@@ -152,15 +136,6 @@ endif
 " configure tags - add additional tags here or comment out not-used ones
  set tags+=~/.vim/tags/tags
  set tags+=~/.vim/tags/tags.ros
- "set tags+=~/.vim/tags/sdl
- " OmniCppComplete
- " let OmniCpp_NamespaceSearch = 1
- " let OmniCpp_GlobalScopeSearch = 1
- " let OmniCpp_ShowAccess = 1
- " let OmniCpp_MayCompleteDot = 1
- " let OmniCpp_MayCompleteArrow = 1
- " let OmniCpp_MayCompleteScope = 1
- "let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
  " automatically open and close the popup menu / preview window
  au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -172,4 +147,40 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
 set clipboard=unnamed
-map <leader>a :A<CR>
+map <leader>a :AV<CR>
+
+
+
+
+
+
+
+let g:UltiSnipsExpandTrigger       = "<tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsSnippetDirectories  = ["snips"]
+
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
+
+
+" Protodef
+
+let g:protodefctagsexe = '/usr/local/bin/ctags'
+let g:protodefprotogetter = '~/.vim/bundle/vim-protodef/pullproto.pl'

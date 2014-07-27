@@ -1,9 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction'
-let g:netrw_dirhist_2='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction/include'
-let g:netrw_dirhist_3='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction/include/hand_interaction'
-let g:netrw_dirhist_4='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction/include'
-let g:netrw_dirhist_5='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction/include/hand_interaction'
-let g:netrw_dirhist_6='/Users/ludus/hydro_ws/src/parloma/kinect_utils/hand_interaction'
-let g:netrw_dirhist_7='/Users/ludus/dotfiles/vim/bundle/Vundle.vim'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/ludus/.vim'
+let g:netrw_dirhist_2='/Users/ludus/.vim/templates'
+let g:netrw_dirhist_3='/Users/ludus/.vim'
+let g:netrw_dirhist_4='/Users/ludus/.vim/UltiSnips'
+let g:netrw_dirhist_5='/Users/ludus/dotfiles/vim/UltiSnips'
+let g:netrw_dirhist_6='/Users/ludus/dotfiles/vim/templates'
