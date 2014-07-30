@@ -24,7 +24,9 @@ Plugin 'derekwyatt/vim-fswitch'
 Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
 
-Plugin 'sven-strothoff/vim-clang_doxygen'
+" Plugin 'sven-strothoff/vim-clang_doxygen'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'vim-scripts/DoxyGen-Syntax'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,8 +36,8 @@ set encoding=utf-8
 syntax on                         " show syntax highlighting
 filetype plugin indent on
 set autoindent                    " set auto indent
-set ts=4                          " set indent to 2 spaces
-set shiftwidth=4
+set ts=2                          " set indent to 2 spaces
+set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
 set relativenumber                " show relative line numbers
@@ -213,9 +215,7 @@ au BufRead,BufNewFile */*_ws/*.{cpp,h}    UltiSnipsAddFiletypes roscpp.cpp
 au BufRead,BufNewFile */stacks/*.py       UltiSnipsAddFiletypes rospy.python
 au BufRead,BufNewFile */*_ws/*.py         UltiSnipsAddFiletypes rospy.python
 
-
-" Doxygen plugin
-
-let g:clang_doxygen_libclang_library_path = '/Library/Developer/CommandLineTools/usr/lib'
-
+" commentary
+"
+autocmd BufRead CMakeLists.txt set commentstring=#\ %s
 
