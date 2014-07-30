@@ -20,3 +20,8 @@ export DYLD_FORCE_FLAT_NAMESPACE=1  # for YouCompleteMe
 
 # for ROS configuration polimi
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/ludus/develop/polimi/flirtlib/ins/lib/flirtlib:/Users/ludus/develop/polimi/bespin/build/lib
+
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi

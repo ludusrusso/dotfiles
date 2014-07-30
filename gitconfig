@@ -5,3 +5,5 @@
 	default = matching
 [core]
 	excludesfile = ~/.gitignore_global
+[alias]
+	graphlog = log --pretty=format:'%h %s [%an]' --graph

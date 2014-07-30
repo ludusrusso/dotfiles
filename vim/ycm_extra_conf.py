@@ -82,6 +82,8 @@ flags = [
 '-isystem',
 '/usr/local/include',
 '-isystem',
+'/usr/local/include/eigen3',
+'-isystem',
 '/opt/ros/hydro/include',
 '-isystem',
 '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
