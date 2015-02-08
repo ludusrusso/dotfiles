@@ -62,6 +62,8 @@ flags = [
 # harmful
 '/System/Library/Frameworks/Python.framework/Headers',
 '-isystem',
+'/Users/ludus/hydro_ws/devel/lib/python2.7/site-packages',
+'-isystem',
 '../llvm/include',
 '-isystem',
 '../llvm/tools/clang/include',

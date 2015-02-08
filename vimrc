@@ -23,6 +23,7 @@ Plugin 'derekwyatt/vim-protodef'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
+Plugin 'taketwo/vim-ros'
 
 " Plugin 'sven-strothoff/vim-clang_doxygen'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -199,8 +200,12 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 
 
-
-
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+let g:ycm_semantic_triggers = {
+\   'roslaunch' : ['="', '$(', '/'],
+\   'rosmsg,rossrv,rosaction' : ['re!^'],
+\ }
 
 
 " ROS
@@ -218,4 +223,7 @@ au BufRead,BufNewFile */*_ws/*.py         UltiSnipsAddFiletypes rospy.python
 " commentary
 "
 autocmd BufRead CMakeLists.txt set commentstring=#\ %s
-
+au BufRead,BufNewFile *.pde,*.ino set filetype=cpp
+" latex
+"
+let g:tex_flavor = "latex"

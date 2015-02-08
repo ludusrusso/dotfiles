@@ -4,9 +4,20 @@
 [push]
 	default = matching
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/ludus/.gitignore_global
 [alias]
 	graphlog = log --pretty=format:'%h %s [%an]' --graph
 	tree = log --oneline --decorate --all --graph
 	co = commit
 	me = merge --no-ff
+  ldiff = difftool -t latex
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[difftool.latex]
+        cmd = latexdiff "$LOCAL" "$REMOTE"
+[difftool]
+        prompt = false
