@@ -237,3 +237,4 @@ let g:tex_flavor = "latex"
 " make nerdtree open at startup
 "
 autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
