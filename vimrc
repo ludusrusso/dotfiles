@@ -1,6 +1,5 @@
 " .vimrc
 
-
 " set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -23,6 +22,7 @@ Plugin 'derekwyatt/vim-protodef'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
 
 " Plugin 'sven-strothoff/vim-clang_doxygen'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -58,6 +58,7 @@ set nofoldenable                  " disable code folding
 set clipboard=unnamed             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
+set backspace=2                   " Make back work as other apps
 runtime macros/matchit.vim        " use % to jump between start/end of methods
 
 " put git status, column/row number, total lines, and percentage in status
