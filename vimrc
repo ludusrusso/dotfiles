@@ -1,6 +1,5 @@
 " .vimrc
 
-
 " set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -24,6 +23,7 @@ Plugin 'derekwyatt/vim-fswitch'
 Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
 Plugin 'taketwo/vim-ros'
+Plugin 'bling/vim-airline'
 
 " Plugin 'sven-strothoff/vim-clang_doxygen'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -59,11 +59,15 @@ set nofoldenable                  " disable code folding
 set clipboard=unnamed             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
+set backspace=2                   " Make back work as other apps
 runtime macros/matchit.vim        " use % to jump between start/end of methods
 
 " put git status, column/row number, total lines, and percentage in status
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
+
+" Tab line
+let g:airline#extensions#tabline#enabled = 1
 " set dark background and color scheme
 let base16colorspace=256  " Access colors present in 256 colorspace"
 let g:solarized_contrast="high"
