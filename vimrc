@@ -26,7 +26,11 @@ Plugin 'taketwo/vim-ros'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'lervag/vim-latex'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'kien/ctrlp.vim'
+Plugin 'AndrewRadev/switch.vim'
+
+" Plugin 'primitivorm/vim-predictive'
 " Plugin 'sven-strothoff/vim-clang_doxygen'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vim-scripts/DoxyGen-Syntax'
@@ -37,7 +41,6 @@ filetype plugin indent on    " required
 set encoding=utf-8
 
 syntax on                         " show syntax highlighting
-filetype plugin indent on
 set autoindent                    " set auto indent
 set ts=2                          " set indent to 2 spaces
 set shiftwidth=2
@@ -243,4 +246,32 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 let NERDTreeQuitOnOpen=1
 
+function! NERDTreeQuit()
+  redir => buffersoutput
+  silent buffers
+  redir END
+"                     1BufNo  2Mods.     3File           4LineNo
+  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
+  let windowfound = 0
+
+  for bline in split(buffersoutput, "\n")
+    let m = matchlist(bline, pattern)
+
+    if (len(m) > 0)
+      if (m[2] =~ '..a..')
+        let windowfound = 1
+      endif
+    endif
+  endfor
+
+  if (!windowfound)
+    quitall
+  endif
+endfunction
+autocmd WinEnter * call NERDTreeQuit()
+
+
+" switch plugin
+
+let g:switch_mapping = "-"
 
