@@ -25,7 +25,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'taketwo/vim-ros'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'lervag/vim-latex'
+" Plugin 'lervag/vim-latex'
 Plugin 'kien/ctrlp.vim'
 " Plugin 'sven-strothoff/vim-clang_doxygen'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -241,5 +241,6 @@ let g:tex_flavor = "latex"
 "
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+let NERDTreeQuitOnOpen=1
 
 
