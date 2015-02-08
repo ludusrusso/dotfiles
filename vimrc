@@ -25,7 +25,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'taketwo/vim-ros'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'lervag/vim-latex'
+Plugin 'kien/ctrlp.vim'
 " Plugin 'sven-strothoff/vim-clang_doxygen'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vim-scripts/DoxyGen-Syntax'
@@ -92,6 +93,8 @@ autocmd BufWinLeave * call clearmatches()
 
 " set leader key to comma
 let mapleader = ","
+
+let g:airline_powerline_fonts = 1
 
 " ctrlp config
 let g:ctrlp_map = '<leader>f'
@@ -238,3 +241,5 @@ let g:tex_flavor = "latex"
 "
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+
+
