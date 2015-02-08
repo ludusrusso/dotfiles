@@ -24,6 +24,7 @@ Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
 Plugin 'taketwo/vim-ros'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
 
 " Plugin 'sven-strothoff/vim-clang_doxygen'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
@@ -231,3 +232,8 @@ au BufRead,BufNewFile *.pde,*.ino set filetype=cpp
 " latex
 "
 let g:tex_flavor = "latex"
+
+
+" make nerdtree open at startup
+"
+autocmd VimEnter * NERDTree
