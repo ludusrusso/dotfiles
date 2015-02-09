@@ -5,3 +5,5 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
 
 export PYTHONPATH=$PYTHONPATH:/Users/ludus/develop/parloma/robotcontrol/python
+
+tmux attach-session
