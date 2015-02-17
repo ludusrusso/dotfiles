@@ -25,6 +25,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'taketwo/vim-ros'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'edkolev/tmuxline.vim'
 " Plugin 'lervag/vim-latex'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'kien/ctrlp.vim'
@@ -106,7 +107,7 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
 
 " use silver searcher for ctrlp
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " unmap F1 help
 nmap <F1> :echo<CR>
@@ -234,7 +235,7 @@ au BufRead,BufNewFile */*_ws/*.py         UltiSnipsAddFiletypes rospy.python
 " commentary
 "
 autocmd BufRead CMakeLists.txt set commentstring=#\ %s
-au BufRead,BufNewFile *.pde,*.ino set filetype=cpp
+au BufRead,BufNewFile *.pde,*.ino, *.c, *.hpp, *.h set filetype=cpp
 " latex
 "
 let g:tex_flavor = "latex"
@@ -274,4 +275,9 @@ autocmd WinEnter * call NERDTreeQuit()
 " switch plugin
 
 let g:switch_mapping = "-"
+
+" Doxigen generator
+
+
+map <leader>d :Dox<CR>
 

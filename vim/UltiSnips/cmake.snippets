@@ -22,6 +22,12 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 endif(CMAKE_COMPILER_IS_GNUCXX)
 endsnippet
 
+snippet init "init cmake" !b
+cmake_minimum_required (VERSION 2.9)
+project (${1:my_project})
+endsnippet
+
+
 snippet werror "Warnings and errors" !b
 #...: treat warnings as errors and disable centain warnings
 add_definitions(-Werror)
