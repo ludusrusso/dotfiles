@@ -7,6 +7,6 @@ alias ls='ls -GFh'
 export DYLD_FORCE_FLAT_NAMESPACE=1
 
 export PYTHONPATH=$PYTHONPATH:/Users/ludus/develop/parloma/robotcontrol/python
-# zsh
 
 source ~/.bin/tmuxinator.bash
+
